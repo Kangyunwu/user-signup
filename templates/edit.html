@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/error" method="post">
+    <table>
+        <tr>
+            <td align="left">Username</td>
+            <td align="left"><input type="text" name="username" value={{username}}></td>
+            <td>
+                {% if error1 %}
+                <div class='error'>{{ error1 }}</div>
+                {% endif %} 
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">Password</td>
+            <td align="left"><input type="password" name="password"/></td>
+            <td>
+                {% if error2 %}
+                <div class='error'>{{ error2 }}</div>
+                {% endif %} 
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">Verify Password</td>
+            <td align="left"><input type="password" name="verifypassword"/></td>
+            <td>
+                {% if error3 %}
+                <div class='error'>{{ error3 }}</div>
+                {% endif %} 
+            </td>
+        </tr>
+
+        <tr>
+            <td align="left">Email (optional)</td>
+            <td align="left"><input type="text" name="email"/></td>
+            <td>
+                {% if error4 %}
+                <div class='error'>{{ error4 }}</div>
+                {% endif %} 
+            </td>
+        </tr>            
+
+            
+    </table>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+{% endblock %}

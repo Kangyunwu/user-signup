@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/welcome" method="post">
+    <p>
+        <label for="user_name">
+            Username
+            <input id="user_name" type="text" name="username"/>
+            {% if error1 %}
+            <p class='error'>{{ error1 }}</p>
+            {% endif %}         
+        </label>
+    </p>
+    <p>
+       <label for="pass_word">
+            Password
+            <input id="pass_word" type="password" name="password"/>
+            {% if error2 %}
+            <p class='error'>{{ error2 }}</p>
+            {% endif %}
+        </label>
+    </p>
+    <p>
+        <label for="verify_password">
+            Verify Password
+            <input id="verify_password" type="password" name="verifypassword"/>
+            {% if error3 %}
+            <p class='error'>{{ error3 }}</p>
+            {% endif %}
+        </label>
+    </p>
+    <p>
+        <label for="email_optional">
+            Email (optional)
+            <input id="email_optional" type="text" name="email"/>
+            {% if error4 %}
+            <p class='error'>{{ error4 }}</p>
+            {% endif %}
+        </label>
+    </p>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+{% endblock %}
